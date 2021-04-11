@@ -1,0 +1,19 @@
+{
+	"name": "rainbow-cart",
+	"version": "1.0.0",
+	"description": "E-Commerce platform to buy and sell any kind of product for affordable price ranges",
+	"main": "server.js",
+	"type": "module",
+	"scripts": {
+		"start": "node back-end/server"
+	},
+	"keywords": [
+		"e-commerce",
+		"MERN",
+		"rainbow",
+		"shopping cart",
+		"cart"
+	],
+	"author": "Randika Rodrigo",
+	"license": "ISC"
+}
