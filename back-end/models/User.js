@@ -1,4 +1,7 @@
 import mongoose from 'mongoose';
+import bcrypt from 'bcrypt';
+
+const SALT_ROUNDS = 10;
 
 const userSchema = mongoose.Schema(
 	{
@@ -15,6 +18,16 @@ const userSchema = mongoose.Schema(
 		timestamp: true
 	}
 );
+
+userSchema.virtual('password').set(function (textPassword) {
+	this.password = bcrypt.hashSync(textPassword, SALT_ROUNDS);
+});
+
+userSchema.methods = {
+	authenticate: function (textPassword) {
+		return bcrypt.compareSync(textPassword, this.password);
+	}
+};
 
 const User = mongoose.model('User', userSchema);
 
