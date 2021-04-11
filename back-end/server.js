@@ -1,6 +1,7 @@
 import express from 'express';
 import colors from 'colors';
 import dotenv from 'dotenv';
+import connectDB from '../back-end/config/database.js';
 
 colors.setTheme({
 	info: ['brightYellow', 'bold'],
@@ -10,12 +11,14 @@ colors.setTheme({
 
 dotenv.config();
 
+connectDB();
+
 const app = express();
 
 // use of express body parser
 app.use(express.json());
 // parse url encoded bodies
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/health', (req, res) => {
 	return res.status(200).json({
