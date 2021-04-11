@@ -12,6 +12,11 @@ dotenv.config();
 
 const app = express();
 
+// use of express body parser
+app.use(express.json());
+// parse url encoded bodies
+app.use(express.urlencoded());
+
 app.get('/health', (req, res) => {
 	return res.status(200).json({
 		status: 'OK',
