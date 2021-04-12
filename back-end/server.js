@@ -2,6 +2,7 @@ import express from 'express';
 import colors from 'colors';
 import dotenv from 'dotenv';
 import connectDB from '../back-end/config/database.js';
+import userRoutes from '../back-end/routes/user.js';
 
 colors.setTheme({
 	info: ['brightYellow', 'bold'],
@@ -26,6 +27,9 @@ app.get('/health', (req, res) => {
 		message: 'API is running'
 	});
 });
+
+// routes
+app.use('/api', userRoutes);
 
 const PORT = process.env.PORT || 5000;
 
