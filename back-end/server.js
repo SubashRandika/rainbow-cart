@@ -2,7 +2,7 @@ import express from 'express';
 import colors from 'colors';
 import dotenv from 'dotenv';
 import connectDB from '../back-end/config/database.js';
-import userRoutes from '../back-end/routes/auth.js';
+import authRoutes from '../back-end/routes/auth.js';
 
 colors.setTheme({
 	info: ['brightYellow', 'bold'],
@@ -29,7 +29,7 @@ app.get('/health', (req, res) => {
 });
 
 // routes
-app.use('/api', userRoutes);
+app.use('/api', authRoutes);
 
 const PORT = process.env.PORT || 5000;
 

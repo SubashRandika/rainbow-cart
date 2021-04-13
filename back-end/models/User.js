@@ -24,6 +24,10 @@ userSchema.virtual('password').set(function (textPassword) {
 	this.passwordHash = bcrypt.hashSync(textPassword, SALT_ROUNDS);
 });
 
+userSchema.virtual('fullName').get(function () {
+	return `${this.firstName} ${this.lastName}`;
+});
+
 userSchema.methods = {
 	authenticate: function (textPassword) {
 		return bcrypt.compareSync(textPassword, this.passwordHash);
