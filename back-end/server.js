@@ -2,7 +2,7 @@ import express from 'express';
 import colors from 'colors';
 import dotenv from 'dotenv';
 import connectDB from '../back-end/config/database.js';
-import userRoutes from '../back-end/routes/user.js';
+import userRoutes from '../back-end/routes/auth.js';
 
 colors.setTheme({
 	info: ['brightYellow', 'bold'],

@@ -1,5 +1,4 @@
 import User from '../models/User.js';
-import validateUser from '../validations/userValidation.js';
 
 export const registerUser = async (req, res) => {
 	try {
