@@ -22,7 +22,7 @@
 		"colors": "^1.4.0",
 		"dotenv": "^8.2.0",
 		"express": "^4.17.1",
-		"joi": "^17.4.0",
+		"express-validator": "^6.10.0",
 		"lodash": "^4.17.21",
 		"mongoose": "^5.12.3"
 	},

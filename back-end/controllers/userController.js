@@ -3,14 +3,6 @@ import validateUser from '../validations/userValidation.js';
 
 export const registerUser = async (req, res) => {
 	try {
-		const { error } = await validateUser(req.body);
-
-		if (error) {
-			return res.status(400).json({
-				errors: error.details[0].message
-			});
-		}
-
 		let user = await User.findOne({ email: req.body.email });
 
 		if (user) {
